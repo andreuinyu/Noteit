@@ -61,21 +61,25 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
+
+import static java.lang.Math.random;
 
 public class Camera2VideoImageActivity extends AppCompatActivity {
 
     Button find;
     AutoCompleteTextView autoComplete;
-
+/*
     String[] CLAUS = new String[]{
-            "AA", "AB", "BA", "BB"
     };
+    */
+    ArrayList<String> CLAUS = new ArrayList<String>();
 
     public void botopremut() {
         String codi = autoComplete.getText().toString();
         int esta = 0;
-        for (int i = 0; i < CLAUS.length; i++) {
-            if (codi.equals(CLAUS[i])) {
+        for (int i = 0; i < CLAUS.size(); i++) {
+            if (codi.equals(CLAUS.get(i))) {
                 esta = 1;
                 //TODO: given key, return image
                 Toast toastWIN = Toast.makeText(this.getBaseContext(), codi, Toast.LENGTH_LONG);
@@ -420,19 +424,6 @@ public class Camera2VideoImageActivity extends AppCompatActivity {
         super.onPause();
     }
 
-   /* @Override
-    public void onWindowFocusChanged(boolean hasFocas) {
-        super.onWindowFocusChanged(hasFocas);
-        View decorView = getWindow().getDecorView();
-        if(hasFocas) {
-            decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                    | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                    | View.SYSTEM_UI_FLAG_FULLSCREEN
-                    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
-        }
-    }*/
 
     private void setupCamera(int width, int height) {
         CameraManager cameraManager = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
@@ -606,15 +597,38 @@ public class Camera2VideoImageActivity extends AppCompatActivity {
             mImageFolder.mkdirs();
         }
     }
+    String caracters = "abcdefghijklmnopqrstuvwxyz0123456789";
 
     private File createImageFileName() throws IOException {
-        String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        String prepend = "IMAGE_" + timestamp + "_";
-        File imageFile = File.createTempFile(prepend, ".jpg", mImageFolder);
-        mImageFileName = imageFile.getAbsolutePath();
+
+        String key = "";
+        boolean validKey = true;
+        do {
+            key = getKey();
+            for (int j = 0; j < CLAUS.size(); j++) {
+                if (key == CLAUS.get(j)){
+                    validKey = false;
+                    break;
+                }
+            }
+        } while (!validKey);
+
+        CLAUS.add(key);
+        File imageFile = File.createTempFile(key, ".jpg", mImageFolder);
+
         return imageFile;
     }
 
+    private String getKey(){
+        String key = "";
+        Random rn = new Random();
+        int n;
+        for(int i=0; i < 4; i++){
+            n = rn.nextInt();
+            key = key + caracters.charAt(n % caracters.length());
+        }
+        return key;
+    }
 
     private void lockFocus() {
         mCaptureState = STATE_WAIT_LOCK;

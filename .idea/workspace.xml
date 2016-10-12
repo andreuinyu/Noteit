@@ -15,7 +15,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -58,8 +57,8 @@
       <file leaf-file-name="Camera2VideoImageActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/mobapptut/com/camera2videoimage/Camera2VideoImageActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="590" column="9" selection-start-line="590" selection-start-column="9" selection-end-line="590" selection-end-column="9" />
+            <state relative-caret-position="530">
+              <caret line="322" column="64" selection-start-line="322" selection-start-column="64" selection-end-line="322" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#10476#10625#0" expanded="true" />
@@ -68,8 +67,8 @@
                 <element signature="e#11158#11159#0" expanded="true" />
                 <element signature="e#11389#11586#0" expanded="true" />
                 <element signature="e#11585#11586#0" expanded="true" />
-                <element signature="e#18755#19480#0" expanded="true" />
-                <element signature="e#19479#19480#0" expanded="true" />
+                <element signature="e#18821#19546#0" expanded="true" />
+                <element signature="e#19545#19546#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2338,7 +2337,14 @@
       <option name="project" value="LOCAL" />
       <updated>1476299840735</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Pictures are finally saved (using old filenames)">
+      <created>1476306702858</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1476306702858</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -2402,7 +2408,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added random keys" />
     <MESSAGE value="Pictures are finally saved (sometimes)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pictures are finally saved (sometimes)" />
+    <MESSAGE value="Pictures are finally saved (using old filenames)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pictures are finally saved (using old filenames)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2423,8 +2430,8 @@
             <element signature="e#11158#11159#0" expanded="true" />
             <element signature="e#11389#11586#0" expanded="true" />
             <element signature="e#11585#11586#0" expanded="true" />
-            <element signature="e#18755#19480#0" expanded="true" />
-            <element signature="e#19479#19480#0" expanded="true" />
+            <element signature="e#18821#19546#0" expanded="true" />
+            <element signature="e#19545#19546#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2460,8 +2467,8 @@
             <element signature="e#11158#11159#0" expanded="true" />
             <element signature="e#11389#11586#0" expanded="true" />
             <element signature="e#11585#11586#0" expanded="true" />
-            <element signature="e#18755#19480#0" expanded="true" />
-            <element signature="e#19479#19480#0" expanded="true" />
+            <element signature="e#18821#19546#0" expanded="true" />
+            <element signature="e#19545#19546#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2497,8 +2504,8 @@
             <element signature="e#11158#11159#0" expanded="true" />
             <element signature="e#11389#11586#0" expanded="true" />
             <element signature="e#11585#11586#0" expanded="true" />
-            <element signature="e#18755#19480#0" expanded="true" />
-            <element signature="e#19479#19480#0" expanded="true" />
+            <element signature="e#18821#19546#0" expanded="true" />
+            <element signature="e#19545#19546#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2534,8 +2541,8 @@
             <element signature="e#11158#11159#0" expanded="true" />
             <element signature="e#11389#11586#0" expanded="true" />
             <element signature="e#11585#11586#0" expanded="true" />
-            <element signature="e#18755#19480#0" expanded="true" />
-            <element signature="e#19479#19480#0" expanded="true" />
+            <element signature="e#18821#19546#0" expanded="true" />
+            <element signature="e#19545#19546#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2571,8 +2578,8 @@
             <element signature="e#11158#11159#0" expanded="true" />
             <element signature="e#11389#11586#0" expanded="true" />
             <element signature="e#11585#11586#0" expanded="true" />
-            <element signature="e#18755#19480#0" expanded="true" />
-            <element signature="e#19479#19480#0" expanded="true" />
+            <element signature="e#18821#19546#0" expanded="true" />
+            <element signature="e#19545#19546#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2597,8 +2604,8 @@
             <element signature="e#11158#11159#0" expanded="true" />
             <element signature="e#11389#11586#0" expanded="true" />
             <element signature="e#11585#11586#0" expanded="true" />
-            <element signature="e#18755#19480#0" expanded="true" />
-            <element signature="e#19479#19480#0" expanded="true" />
+            <element signature="e#18821#19546#0" expanded="true" />
+            <element signature="e#19545#19546#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2623,8 +2630,8 @@
             <element signature="e#11158#11159#0" expanded="true" />
             <element signature="e#11389#11586#0" expanded="true" />
             <element signature="e#11585#11586#0" expanded="true" />
-            <element signature="e#18755#19480#0" expanded="true" />
-            <element signature="e#19479#19480#0" expanded="true" />
+            <element signature="e#18821#19546#0" expanded="true" />
+            <element signature="e#19545#19546#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2660,8 +2667,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/mobapptut/com/camera2videoimage/Camera2VideoImageActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="590" column="9" selection-start-line="590" selection-start-column="9" selection-end-line="590" selection-end-column="9" />
+        <state relative-caret-position="530">
+          <caret line="322" column="64" selection-start-line="322" selection-start-column="64" selection-end-line="322" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#10476#10625#0" expanded="true" />
@@ -2670,8 +2677,8 @@
             <element signature="e#11158#11159#0" expanded="true" />
             <element signature="e#11389#11586#0" expanded="true" />
             <element signature="e#11585#11586#0" expanded="true" />
-            <element signature="e#18755#19480#0" expanded="true" />
-            <element signature="e#19479#19480#0" expanded="true" />
+            <element signature="e#18821#19546#0" expanded="true" />
+            <element signature="e#19545#19546#0" expanded="true" />
           </folding>
         </state>
       </provider>

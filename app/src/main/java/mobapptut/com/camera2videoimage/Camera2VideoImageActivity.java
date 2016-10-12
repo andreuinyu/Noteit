@@ -319,6 +319,8 @@ public class Camera2VideoImageActivity extends AppCompatActivity {
                  lockFocus();
              }
         });
+
+        //TODO: Picture gets taken when VolumeDownKey is pressed
         }
 
 

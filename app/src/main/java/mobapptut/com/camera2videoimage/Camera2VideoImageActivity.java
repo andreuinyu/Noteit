@@ -33,19 +33,11 @@ import android.view.KeyEvent;
 import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
-import android.view.Window;
-import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.Chronometer;
 import android.widget.ImageButton;
-import android.widget.TextView;
 import android.widget.Toast;
-
-
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.Thing;
 
 
 import java.io.File;
@@ -61,17 +53,13 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
-import static java.lang.Math.random;
 
 public class Camera2VideoImageActivity extends AppCompatActivity {
 
     Button find;
     AutoCompleteTextView autoComplete;
-/*
-    String[] CLAUS = new String[]{
-    };
-    */
-    ArrayList<String> CLAUS = new ArrayList<String>();
+
+    public ArrayList<String> CLAUS = new ArrayList<String>();
 
     public void botopremut() {
         String codi = autoComplete.getText().toString();
@@ -237,7 +225,6 @@ public class Camera2VideoImageActivity extends AppCompatActivity {
                             Integer afState = captureResult.get(CaptureResult.CONTROL_AF_STATE);
                             if (afState == CaptureResult.CONTROL_AF_STATE_FOCUSED_LOCKED ||
                                     afState == CaptureResult.CONTROL_AF_STATE_NOT_FOCUSED_LOCKED) {
-                                Toast.makeText(getApplicationContext(), "Picture taken!", Toast.LENGTH_SHORT).show();
                                 startStillCaptureRequest();
                             }
                             break;
@@ -282,6 +269,8 @@ public class Camera2VideoImageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         find = (Button) findViewById(R.id.button2);
 
+        //TODO: When the app is opened, update the CLAUS string array with the names of the pictures on the directory (for instance if the user has manually deleted one of them)
+
         setContentView(R.layout.activity_camera2_video_image);
 
 
@@ -315,29 +304,27 @@ public class Camera2VideoImageActivity extends AppCompatActivity {
                 return false;
             }
         });
+        mTextureView=(TextureView)
 
+                findViewById(R.id.textureView);
 
+        mStillImageButton=(ImageButton)
 
-    mTextureView=(TextureView)
+                findViewById(R.id.cameraImageButton2);
 
-    findViewById(R.id.textureView);
-
-    mStillImageButton=(ImageButton)
-
-    findViewById(R.id.cameraImageButton2);
-
-    mStillImageButton.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick (View v){
-            ckeckWriteStoragePermission();
-            lockFocus();
+        mStillImageButton.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick (View v){
+                 checkWriteStoragePermission();
+                 lockFocus();
+             }
+        });
         }
-    }
-    );
 
-}
 
-    public void ckeckWriteStoragePermission(){
+
+
+    public void checkWriteStoragePermission(){
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) !=
                     PackageManager.PERMISSION_GRANTED) {
@@ -493,6 +480,7 @@ public class Camera2VideoImageActivity extends AppCompatActivity {
                 public void onCaptureStarted(CameraCaptureSession session, CaptureRequest request, long timestamp, long frameNumber) {
                     super.onCaptureStarted(session, request, timestamp, frameNumber);
                     try {
+                        Toast.makeText(getApplicationContext(),"PRE Image saved", Toast.LENGTH_SHORT).show();
                         createImageFileName();
                         Toast.makeText(getApplicationContext(),"Image saved", Toast.LENGTH_SHORT).show();
                     } catch (IOException e) {
@@ -560,33 +548,36 @@ public class Camera2VideoImageActivity extends AppCompatActivity {
             mImageFolder.mkdirs();
         }
     }
-    String caracters = "abcdefghijklmnopqrstuvwxyz0123456789";
+    String mCharacters = "abcdefghijklmnopqrstuvwxyz0123456789";
 
     private File createImageFileName() throws IOException {
 
-        String key = "";
-        boolean validKey = true;
+        /*
+        String key;
+        boolean validKey;
+
         do {
             key = getKey();
-            for (int j = 0; j < CLAUS.size(); j++) {
-                if (key == CLAUS.get(j)){
-                    validKey = false;
-                    break;
-                }
+            if (CLAUS.isEmpty()){
+                break;
+            }else {
+                validKey = !CLAUS.contains(key);
             }
         } while (!validKey);
-        Toast.makeText(getApplicationContext(),key,Toast.LENGTH_SHORT).show();
+
         CLAUS.add(key);
+
         File imageFile = File.createTempFile(key, ".jpg", mImageFolder);
         mImageFileName = imageFile.getAbsolutePath();
         return imageFile;
-        /*
+        */
+
         String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String prepend = "IMAGE_" + timestamp + "_";
         File imageFile = File.createTempFile(prepend, ".jpg", mImageFolder);
         mImageFileName = imageFile.getAbsolutePath();
         return imageFile;
-        */
+
     }
 
     private String getKey(){
@@ -595,7 +586,7 @@ public class Camera2VideoImageActivity extends AppCompatActivity {
         int n;
         for(int i=0; i < 4; i++){
             n = rn.nextInt();
-            key = key + caracters.charAt(n % caracters.length());
+            key = key + mCharacters.charAt(n % mCharacters.length());
 
         }
         return key;
